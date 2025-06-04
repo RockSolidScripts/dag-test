@@ -18,7 +18,7 @@ with DAG(
     submit_spark_pi = SparkKubernetesOperator(
         task_id="submit_spark_pi",
         namespace="spark-test",
-        application_file="/opt/airflow/dags/spark_pi.yaml",  # adjust path if different
+        application_file="spark_pi.yaml",  # adjust path if different
         kubernetes_conn_id="kubernetes_default",
         do_xcom_push=False
     )
