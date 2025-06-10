@@ -26,12 +26,19 @@ spec:
   imagePullPolicy: IfNotPresent
   mainApplicationFile: local:///app/app.py
   sparkVersion: 3.5.5
+  volumes:
+    - name: checkpoint-volume
+      persistentVolumeClaim:
+        claimName: spark-checkpoint-pvc
   driver:
     labels:
       test: ganesh
     cores: 1
     memory: 512m
     serviceAccount: spark-operator-spark
+    volumeMounts:
+      - name: checkpoint-volume
+        mountPath: /checkpoint
     securityContext:
       capabilities:
         drop:
@@ -46,6 +53,9 @@ spec:
     instances: 1
     cores: 1
     memory: 512m
+    volumeMounts:
+      - name: checkpoint-volume
+        mountPath: /checkpoint
     securityContext:
       capabilities:
         drop:
