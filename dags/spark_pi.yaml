@@ -19,13 +19,10 @@ metadata:
   name: spark-pi-python
   namespace: spark-test
 spec:
-  deps:
-    packages:
-      - org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0
   type: Python
   pythonVersion: "3"
   mode: cluster
-  image: 05068384/spark-test:4.0
+  image: 05068384/spark-test:5.0
   imagePullPolicy: IfNotPresent
   mainApplicationFile: local:///app/run.py
   sparkVersion: 3.5.5
