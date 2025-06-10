@@ -22,7 +22,7 @@ spec:
   type: Python
   pythonVersion: "3"
   mode: cluster
-  image: 05068384/spark-test:7.0
+  image: 05068384/spark-test:8.0
   imagePullPolicy: IfNotPresent
   mainApplicationFile: local:///app/run.py
   sparkVersion: 3.5.5
