@@ -19,6 +19,9 @@ metadata:
   name: spark-pi-python
   namespace: spark-test
 spec:
+  deps:
+    packages:
+      - org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0
   type: Python
   pythonVersion: "3"
   mode: cluster
