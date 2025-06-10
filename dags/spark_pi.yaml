@@ -22,9 +22,9 @@ spec:
   type: Python
   pythonVersion: "3"
   mode: cluster
-  image: 05068384/spark-test:1.0
+  image: 05068384/spark-test:2.0
   imagePullPolicy: IfNotPresent
-  mainApplicationFile: local:///app/app.py
+  mainApplicationFile: local:///app/run.py
   sparkVersion: 3.5.5
   volumes:
     - name: checkpoint-volume
